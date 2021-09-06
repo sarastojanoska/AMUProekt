@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA01599926DAD9A60045EAFB /* AvailableSeatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01599826DAD9A50045EAFB /* AvailableSeatsTableViewController.swift */; };
+		AA01599B26DAE0B10045EAFB /* RequestReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01599A26DAE0B10045EAFB /* RequestReservationTableViewController.swift */; };
+		AA01599D26DB05630045EAFB /* AvailableSeatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01599C26DB05630045EAFB /* AvailableSeatRequestViewController.swift */; };
+		AA01599F26DB1B820045EAFB /* vtora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA01599E26DB1B810045EAFB /* vtora.jpg */; };
 		AA026AFE26CFD1D4005526C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA026AFD26CFD1D4005526C0 /* AppDelegate.swift */; };
 		AA026B0026CFD1D4005526C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA026AFF26CFD1D4005526C0 /* ViewController.swift */; };
 		AA026B0326CFD1D4005526C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA026B0126CFD1D4005526C0 /* Main.storyboard */; };
 		AA026B0626CFD1D4005526C0 /* proektAMU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA026B0426CFD1D4005526C0 /* proektAMU.xcdatamodeld */; };
 		AA026B0826CFD1F8005526C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA026B0726CFD1F8005526C0 /* Assets.xcassets */; };
 		AA026B0B26CFD1F8005526C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA026B0926CFD1F8005526C0 /* LaunchScreen.storyboard */; };
+		AA09A79026E5805B00BD5C68 /* ReservationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */; };
+		AA09A79226E58F1200BD5C68 /* ReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */; };
+		AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A79326E59D7100BD5C68 /* MapViewController.swift */; };
+		AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */; };
+		AA0BFAE226E03D0500BD80E1 /* HostessDetailRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */; };
+		AAFB954226DD8B650028948C /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */; };
+		AAFB954426DDA0CE0028948C /* treta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAFB954326DDA0CD0028948C /* treta.jpg */; };
+		AAFB954626DDA2250028948C /* cetvrta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAFB954526DDA2250028948C /* cetvrta.jpg */; };
+		AAFE49FE26D843DA006ED9E3 /* prva.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAFE49FD26D843DA006ED9E3 /* prva.jpg */; };
+		AAFE4A0226D85E9D006ED9E3 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE4A0126D85E9C006ED9E3 /* GuestViewController.swift */; };
+		B76522AB9812D3BAE5F4EEBE /* Pods_proektAMU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EAE54A32AB40F40787EA61 /* Pods_proektAMU.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA01599826DAD9A50045EAFB /* AvailableSeatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableSeatsTableViewController.swift; sourceTree = "<group>"; };
+		AA01599A26DAE0B10045EAFB /* RequestReservationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReservationTableViewController.swift; sourceTree = "<group>"; };
+		AA01599C26DB05630045EAFB /* AvailableSeatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableSeatRequestViewController.swift; sourceTree = "<group>"; };
+		AA01599E26DB1B810045EAFB /* vtora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vtora.jpg; sourceTree = SOURCE_ROOT; };
 		AA026AFA26CFD1D4005526C0 /* proektAMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proektAMU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA026AFD26CFD1D4005526C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA026AFF26CFD1D4005526C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +43,19 @@
 		AA026B0726CFD1F8005526C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA026B0A26CFD1F8005526C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA026B0C26CFD1F8005526C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableViewController.swift; sourceTree = "<group>"; };
+		AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailViewController.swift; sourceTree = "<group>"; };
+		AA09A79326E59D7100BD5C68 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostessRequestsTableViewController.swift; path = /Users/sarastojanoska/Desktop/proektAMU/proektAMU/HostessRequestsTableViewController.swift; sourceTree = "<absolute>"; };
+		AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostessDetailRequestViewController.swift; sourceTree = "<group>"; };
+		AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewController.swift; sourceTree = "<group>"; };
+		AAFB954326DDA0CD0028948C /* treta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = treta.jpg; sourceTree = SOURCE_ROOT; };
+		AAFB954526DDA2250028948C /* cetvrta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cetvrta.jpg; sourceTree = SOURCE_ROOT; };
+		AAFE49FD26D843DA006ED9E3 /* prva.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = prva.jpg; sourceTree = SOURCE_ROOT; };
+		AAFE4A0126D85E9C006ED9E3 /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuestViewController.swift; path = /Users/sarastojanoska/Desktop/proektAMU/proektAMU/GuestViewController.swift; sourceTree = "<absolute>"; };
+		B7BEC9B3A49123B39F5FECC0 /* Pods-proektAMU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proektAMU.debug.xcconfig"; path = "Target Support Files/Pods-proektAMU/Pods-proektAMU.debug.xcconfig"; sourceTree = "<group>"; };
+		E9EAE54A32AB40F40787EA61 /* Pods_proektAMU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proektAMU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86AF903F5F4F64A586FDEE0 /* Pods-proektAMU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proektAMU.release.xcconfig"; path = "Target Support Files/Pods-proektAMU/Pods-proektAMU.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76522AB9812D3BAE5F4EEBE /* Pods_proektAMU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1858EC7E2F373507BD6C4258 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7BEC9B3A49123B39F5FECC0 /* Pods-proektAMU.debug.xcconfig */,
+				F86AF903F5F4F64A586FDEE0 /* Pods-proektAMU.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		72B9ACB9573ECE09827EAFDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9EAE54A32AB40F40787EA61 /* Pods_proektAMU.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA026AF126CFD1D3005526C0 = {
 			isa = PBXGroup;
 			children = (
 				AA026AFC26CFD1D4005526C0 /* proektAMU */,
 				AA026AFB26CFD1D4005526C0 /* Products */,
+				1858EC7E2F373507BD6C4258 /* Pods */,
+				72B9ACB9573ECE09827EAFDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +110,25 @@
 			children = (
 				AA026AFD26CFD1D4005526C0 /* AppDelegate.swift */,
 				AA026AFF26CFD1D4005526C0 /* ViewController.swift */,
+				AAFE4A0126D85E9C006ED9E3 /* GuestViewController.swift */,
+				AA01599826DAD9A50045EAFB /* AvailableSeatsTableViewController.swift */,
+				AA01599C26DB05630045EAFB /* AvailableSeatRequestViewController.swift */,
+				AA01599A26DAE0B10045EAFB /* RequestReservationTableViewController.swift */,
+				AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */,
+				AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */,
+				AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */,
+				AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */,
+				AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */,
+				AA09A79326E59D7100BD5C68 /* MapViewController.swift */,
 				AA026B0126CFD1D4005526C0 /* Main.storyboard */,
 				AA026B0726CFD1F8005526C0 /* Assets.xcassets */,
 				AA026B0926CFD1F8005526C0 /* LaunchScreen.storyboard */,
 				AA026B0C26CFD1F8005526C0 /* Info.plist */,
 				AA026B0426CFD1D4005526C0 /* proektAMU.xcdatamodeld */,
+				AAFB954526DDA2250028948C /* cetvrta.jpg */,
+				AAFB954326DDA0CD0028948C /* treta.jpg */,
+				AA01599E26DB1B810045EAFB /* vtora.jpg */,
+				AAFE49FD26D843DA006ED9E3 /* prva.jpg */,
 			);
 			path = proektAMU;
 			sourceTree = "<group>";
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA026B0F26CFD1F8005526C0 /* Build configuration list for PBXNativeTarget "proektAMU" */;
 			buildPhases = (
+				20CEBB1CD4B086C3A56F310A /* [CP] Check Pods Manifest.lock */,
 				AA026AF626CFD1D3005526C0 /* Sources */,
 				AA026AF726CFD1D3005526C0 /* Frameworks */,
 				AA026AF826CFD1D3005526C0 /* Resources */,
+				6145B6403AE74F19D3EC791F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA01599F26DB1B820045EAFB /* vtora.jpg in Resources */,
+				AAFB954626DDA2250028948C /* cetvrta.jpg in Resources */,
+				AAFE49FE26D843DA006ED9E3 /* prva.jpg in Resources */,
+				AAFB954426DDA0CE0028948C /* treta.jpg in Resources */,
 				AA026B0B26CFD1F8005526C0 /* LaunchScreen.storyboard in Resources */,
 				AA026B0826CFD1F8005526C0 /* Assets.xcassets in Resources */,
 				AA026B0326CFD1D4005526C0 /* Main.storyboard in Resources */,
@@ -133,14 +205,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20CEBB1CD4B086C3A56F310A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-proektAMU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6145B6403AE74F19D3EC791F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proektAMU/Pods-proektAMU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proektAMU/Pods-proektAMU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-proektAMU/Pods-proektAMU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA026AF626CFD1D3005526C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA01599D26DB05630045EAFB /* AvailableSeatRequestViewController.swift in Sources */,
+				AA01599926DAD9A60045EAFB /* AvailableSeatsTableViewController.swift in Sources */,
 				AA026B0626CFD1D4005526C0 /* proektAMU.xcdatamodeld in Sources */,
 				AA026B0026CFD1D4005526C0 /* ViewController.swift in Sources */,
+				AA09A79226E58F1200BD5C68 /* ReservationDetailViewController.swift in Sources */,
 				AA026AFE26CFD1D4005526C0 /* AppDelegate.swift in Sources */,
+				AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */,
+				AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */,
+				AA01599B26DAE0B10045EAFB /* RequestReservationTableViewController.swift in Sources */,
+				AAFE4A0226D85E9D006ED9E3 /* GuestViewController.swift in Sources */,
+				AAFB954226DD8B650028948C /* RequestDetailsViewController.swift in Sources */,
+				AA09A79026E5805B00BD5C68 /* ReservationsTableViewController.swift in Sources */,
+				AA0BFAE226E03D0500BD80E1 /* HostessDetailRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +408,7 @@
 		};
 		AA026B1026CFD1F8005526C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7BEC9B3A49123B39F5FECC0 /* Pods-proektAMU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +427,7 @@
 		};
 		AA026B1126CFD1F8005526C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F86AF903F5F4F64A586FDEE0 /* Pods-proektAMU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
