@@ -7,24 +7,34 @@
 //
 
 import UIKit
+import Parse
 
 class GuestCommentsDetailViewController: UIViewController {
+    
+    var datum = NSDate()
+    var status = String()
+    var Ime = String()
+    var Prezime = String()
+    var komentar = String()
+    var komId = String()
 
+    
+    @IBOutlet weak var Comment: UILabel!
+    @IBOutlet weak var Status: UILabel!
+    @IBOutlet weak var Datum: UILabel!
+    @IBOutlet weak var Korisnik: UILabel!
+    @IBAction func GoBack(_ sender: Any) {
+        performSegue(withIdentifier: "nSeg", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Korisnik.text = Ime + " " + Prezime
+        Status.text = status
+        Comment.text = komentar
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let StringDate = formatter.string(from: datum as Date)
+        Datum.text = StringDate
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -26,8 +26,16 @@ class ReservationDetailViewController: UIViewController {
     var DatumZavrsuvanje = NSDate()
     
     
+    @IBAction func VidiKomentari(_ sender: Any) {
+        performSegue(withIdentifier: "kommSeg", sender: nil)
+    }
+    @IBOutlet weak var Komentari: UIButton!
     @IBOutlet weak var chooseDate: UILabel!
     
+    @IBOutlet weak var kopceReview: UIButton!
+    @IBAction func Review(_ sender: Any) {
+        performSegue(withIdentifier: "konRevSeg", sender: nil)
+    }
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var Data: UILabel!
     
@@ -49,6 +57,7 @@ class ReservationDetailViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
         let StringDate = formatter.string(from: datum as Date)
+        Data.text = StringDate
         Address.text = adresa
         if status == "scheduled"{
             FinishedOn.isHidden = true
@@ -56,7 +65,8 @@ class ReservationDetailViewController: UIViewController {
             DatePicker.datePickerMode = .date
             DatePicker.isHidden = false
             datePicker = DatePicker.date as NSDate
-            
+            Komentari.isHidden = true
+            kopceReview.isHidden = true
         }
         else{
             let formatter = DateFormatter()
@@ -65,6 +75,8 @@ class ReservationDetailViewController: UIViewController {
             FinishedOn.text = StringDate
             FinishedOn.isHidden = false
             DatePicker.isHidden = true
+            Komentari.isHidden = false
+            kopceReview.isHidden = false
         }
     }
     

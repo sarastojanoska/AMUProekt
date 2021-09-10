@@ -7,84 +7,129 @@
 //
 
 import UIKit
+import Parse
 
 class GuestCommentsTableViewController: UITableViewController {
+    
+    var datumi = [NSDate]()
+    var statusi = [String]()
+    var Iminja = [String]()
+    var Preziminja = [String]()
+    var komentari = [String]()
+    var komIds = [String]()
+    
+    var refresher: UIRefreshControl = UIRefreshControl()
 
+    @IBAction func GoBack(_ sender: Any) {
+        performSegue(withIdentifier: "odinazadSeg", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updateTable()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(GuestCommentsTableViewController.updateTable), for: UIControl.Event.valueChanged)
+        self.view.addSubview(refresher)
     }
 
-    // MARK: - Table view data source
+    @objc func updateTable(){
+        datumi.removeAll()
+        Iminja.removeAll()
+        Preziminja.removeAll()
+        statusi.removeAll()
+        komentari.removeAll()
+        komIds.removeAll()
+        
+        let array = ["pozitivno", "negativno"]
+        let predicate = NSPredicate(format: "status = %@ OR status = %@", argumentArray: array)
+        let query = PFQuery(className: "Comment" , predicate: predicate)
+        query.whereKey("to", equalTo: PFUser.current()?.objectId)
+        query.addDescendingOrder("date")
+        query.findObjectsInBackground { (objects, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+            }
+            else if let object = objects {
+                for obj in object {
+                    if let date = obj["date"]{
+                        if let status = obj["status"]{
+                            if let kom = obj["komentar"]{
+                                if let komId = obj.objectId{
+                                    if let userId = obj["from"]{
+                                        let userQuery = PFUser.query()
+                                        userQuery?.whereKey("objectId", equalTo: userId)
+                                        userQuery?.findObjectsInBackground(block: { (users, error) in
+                                            if error != nil{
+                                                print(error?.localizedDescription)
+                                            }
+                                            else if let user = users{
+                                                for u in user{
+                                                    if let u = u as? PFUser {
+                                                        if let fname = u["firstName"]{
+                                                            if let lname = u["lastName"]{
+                                                                self.datumi.append(date as! NSDate)
+                                                                self.statusi.append(status as! String)
+                                                                self.komentari.append(kom as! String)
+                                                                self.komIds.append(komId as! String)
+                                                                self.Iminja.append(fname as! String)
+                                                                self.Preziminja.append(lname as! String)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            self.refresher.endRefreshing()
+                                            self.tableView.reloadData()
+                                        })
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return statusi.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let StringDate = dateFormatter.string(from: self.datumi[indexPath.row] as! Date)
+        cell.textLabel?.text = StringDate
+        cell.detailTextLabel?.text = Iminja[indexPath.row] + " " + Preziminja[indexPath.row]
+        if statusi[indexPath.row] == "pozitivno" {
+            cell.backgroundColor = .green
+        }
+        else{
+            cell.backgroundColor = .red
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "comDetailSeg" {
+            if let index = tableView.indexPathForSelectedRow?.row {
+                let destVC = segue.destination as! GuestCommentsDetailViewController
+                destVC.Ime = Iminja[index]
+                destVC.Prezime = Preziminja[index]
+                destVC.status = statusi[index]
+                destVC.datum = datumi[index]
+                destVC.komentar = komentari[index]
+                destVC.komId = komIds[index]
+            }
+        }
     }
-    */
 
 }

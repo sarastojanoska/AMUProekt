@@ -17,11 +17,18 @@
 		AA026B0626CFD1D4005526C0 /* proektAMU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA026B0426CFD1D4005526C0 /* proektAMU.xcdatamodeld */; };
 		AA026B0826CFD1F8005526C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA026B0726CFD1F8005526C0 /* Assets.xcassets */; };
 		AA026B0B26CFD1F8005526C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA026B0926CFD1F8005526C0 /* LaunchScreen.storyboard */; };
+		AA081DEF26E965BE00A9F199 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA081DEE26E965BE00A9F199 /* CommentsTableViewController.swift */; };
+		AA081DF126E976E300A9F199 /* CommentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA081DF026E976E300A9F199 /* CommentDetailsViewController.swift */; };
+		AA081DF326E97CB200A9F199 /* patrick-schneider-5xltWMpkN3E-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA081DF226E97CB100A9F199 /* patrick-schneider-5xltWMpkN3E-unsplash.jpg */; };
+		AA081DF526E981D400A9F199 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA081DF426E981D400A9F199 /* AddCommentViewController.swift */; };
 		AA09A79026E5805B00BD5C68 /* ReservationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */; };
 		AA09A79226E58F1200BD5C68 /* ReservationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */; };
 		AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A79326E59D7100BD5C68 /* MapViewController.swift */; };
 		AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */; };
 		AA0BFAE226E03D0500BD80E1 /* HostessDetailRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */; };
+		AA42DB0D26EAACA5002F2983 /* GuestCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB0C26EAACA5002F2983 /* GuestCommentsTableViewController.swift */; };
+		AA42DB0F26EAACE9002F2983 /* GuestCommentsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */; };
+		AA42DB1126EACB80002F2983 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */; };
 		AAFB954226DD8B650028948C /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */; };
 		AAFB954426DDA0CE0028948C /* treta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAFB954326DDA0CD0028948C /* treta.jpg */; };
 		AAFB954626DDA2250028948C /* cetvrta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAFB954526DDA2250028948C /* cetvrta.jpg */; };
@@ -43,11 +50,18 @@
 		AA026B0726CFD1F8005526C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA026B0A26CFD1F8005526C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA026B0C26CFD1F8005526C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA081DEE26E965BE00A9F199 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		AA081DF026E976E300A9F199 /* CommentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailsViewController.swift; sourceTree = "<group>"; };
+		AA081DF226E97CB100A9F199 /* patrick-schneider-5xltWMpkN3E-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "patrick-schneider-5xltWMpkN3E-unsplash.jpg"; sourceTree = SOURCE_ROOT; };
+		AA081DF426E981D400A9F199 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableViewController.swift; sourceTree = "<group>"; };
 		AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailViewController.swift; sourceTree = "<group>"; };
 		AA09A79326E59D7100BD5C68 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostessRequestsTableViewController.swift; path = /Users/sarastojanoska/Desktop/proektAMU/proektAMU/HostessRequestsTableViewController.swift; sourceTree = "<absolute>"; };
 		AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostessDetailRequestViewController.swift; sourceTree = "<group>"; };
+		AA42DB0C26EAACA5002F2983 /* GuestCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCommentsTableViewController.swift; sourceTree = "<group>"; };
+		AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCommentsDetailViewController.swift; sourceTree = "<group>"; };
+		AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewController.swift; sourceTree = "<group>"; };
 		AAFB954326DDA0CD0028948C /* treta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = treta.jpg; sourceTree = SOURCE_ROOT; };
 		AAFB954526DDA2250028948C /* cetvrta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cetvrta.jpg; sourceTree = SOURCE_ROOT; };
@@ -115,16 +129,23 @@
 				AA01599C26DB05630045EAFB /* AvailableSeatRequestViewController.swift */,
 				AA01599A26DAE0B10045EAFB /* RequestReservationTableViewController.swift */,
 				AAFB954126DD8B650028948C /* RequestDetailsViewController.swift */,
+				AA081DEE26E965BE00A9F199 /* CommentsTableViewController.swift */,
+				AA081DF026E976E300A9F199 /* CommentDetailsViewController.swift */,
+				AA081DF426E981D400A9F199 /* AddCommentViewController.swift */,
 				AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */,
 				AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */,
 				AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */,
 				AA09A79126E58F1200BD5C68 /* ReservationDetailViewController.swift */,
+				AA42DB0C26EAACA5002F2983 /* GuestCommentsTableViewController.swift */,
+				AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */,
 				AA09A79326E59D7100BD5C68 /* MapViewController.swift */,
+				AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */,
 				AA026B0126CFD1D4005526C0 /* Main.storyboard */,
 				AA026B0726CFD1F8005526C0 /* Assets.xcassets */,
 				AA026B0926CFD1F8005526C0 /* LaunchScreen.storyboard */,
 				AA026B0C26CFD1F8005526C0 /* Info.plist */,
 				AA026B0426CFD1D4005526C0 /* proektAMU.xcdatamodeld */,
+				AA081DF226E97CB100A9F199 /* patrick-schneider-5xltWMpkN3E-unsplash.jpg */,
 				AAFB954526DDA2250028948C /* cetvrta.jpg */,
 				AAFB954326DDA0CD0028948C /* treta.jpg */,
 				AA01599E26DB1B810045EAFB /* vtora.jpg */,
@@ -196,6 +217,7 @@
 				AA01599F26DB1B820045EAFB /* vtora.jpg in Resources */,
 				AAFB954626DDA2250028948C /* cetvrta.jpg in Resources */,
 				AAFE49FE26D843DA006ED9E3 /* prva.jpg in Resources */,
+				AA081DF326E97CB200A9F199 /* patrick-schneider-5xltWMpkN3E-unsplash.jpg in Resources */,
 				AAFB954426DDA0CE0028948C /* treta.jpg in Resources */,
 				AA026B0B26CFD1F8005526C0 /* LaunchScreen.storyboard in Resources */,
 				AA026B0826CFD1F8005526C0 /* Assets.xcassets in Resources */,
@@ -255,10 +277,16 @@
 				AA01599D26DB05630045EAFB /* AvailableSeatRequestViewController.swift in Sources */,
 				AA01599926DAD9A60045EAFB /* AvailableSeatsTableViewController.swift in Sources */,
 				AA026B0626CFD1D4005526C0 /* proektAMU.xcdatamodeld in Sources */,
+				AA081DF126E976E300A9F199 /* CommentDetailsViewController.swift in Sources */,
+				AA081DF526E981D400A9F199 /* AddCommentViewController.swift in Sources */,
 				AA026B0026CFD1D4005526C0 /* ViewController.swift in Sources */,
+				AA42DB1126EACB80002F2983 /* ReviewTableViewController.swift in Sources */,
+				AA42DB0D26EAACA5002F2983 /* GuestCommentsTableViewController.swift in Sources */,
 				AA09A79226E58F1200BD5C68 /* ReservationDetailViewController.swift in Sources */,
+				AA42DB0F26EAACE9002F2983 /* GuestCommentsDetailViewController.swift in Sources */,
 				AA026AFE26CFD1D4005526C0 /* AppDelegate.swift in Sources */,
 				AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */,
+				AA081DEF26E965BE00A9F199 /* CommentsTableViewController.swift in Sources */,
 				AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */,
 				AA01599B26DAE0B10045EAFB /* RequestReservationTableViewController.swift in Sources */,
 				AAFE4A0226D85E9D006ED9E3 /* GuestViewController.swift in Sources */,

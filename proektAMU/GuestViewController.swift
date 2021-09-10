@@ -77,7 +77,7 @@ class GuestViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
                 self.Tip = "Table"
             }
             let query = PFUser.query()
-         //query?.whereKey("reqSeat", equalTo: "Tip")
+         query?.whereKey("reqSeat", equalTo: Tip)
             query?.findObjectsInBackground(block: { (object, error) in
                 if error != nil{
                     print(error?.localizedDescription)

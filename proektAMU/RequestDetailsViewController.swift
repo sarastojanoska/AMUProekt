@@ -35,12 +35,16 @@ class RequestDetailsViewController: UIViewController {
     @IBOutlet weak var Accept: UIButton!
     @IBOutlet weak var Decline: UIButton!
     @IBOutlet weak var GoBack: UIButton!
+    @IBOutlet weak var Komentiraj: UIButton!
     var Datumi = [NSDate]()
     var HostessIds = [String]()
     var statuses = [String]()
     var descriptions = [String]()
     
-
+    @IBAction func LeaveComment(_ sender: Any) {
+        performSegue(withIdentifier: "tablecomSeg", sender: nil)
+    }
+    
     @IBAction func AcceptPressed(_ sender: Any) {
         let query = PFQuery(className: "Reservation")
         query.whereKey("from", equalTo: PFUser.current()?.objectId)
@@ -136,7 +140,7 @@ class RequestDetailsViewController: UIViewController {
             Accept.isHidden = true
             Decline.setTitle("CANCEL", for: .normal)
             Decline.isHidden = false
-            
+            Komentiraj.isHidden = true
         }
         else if status == "pending"{
             let dateformatter = DateFormatter()
@@ -150,6 +154,7 @@ class RequestDetailsViewController: UIViewController {
             Decline.isHidden = false
             DateReserved.isHidden = true
             RezerviranoNa.isHidden = true
+            Komentiraj.isHidden = true
         }
         else if status == "scheduled"{
             let dateformatter = DateFormatter()
@@ -161,6 +166,7 @@ class RequestDetailsViewController: UIViewController {
             Accept.isHidden = true
             Decline.isHidden = true
             RezerviranoNa.isHidden = false
+            Komentiraj.isHidden = true
         }
         else if status == "done"{
             let dateformatter = DateFormatter()
@@ -171,7 +177,7 @@ class RequestDetailsViewController: UIViewController {
             Decline.isHidden = true
             DateReserved.text = "Ended on:"
             DatumP.isHidden = true
-            
+            Komentiraj.isHidden = false
         }
     }
     

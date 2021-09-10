@@ -7,84 +7,136 @@
 //
 
 import UIKit
+import Parse
 
 class CommentsTableViewController: UITableViewController {
-
+    
+    var index = Int()
+    var datumi = [NSDate]()
+    var HostessIds = [String]()
+    var Iminja = [String]()
+    var Preziminja = [String]()
+    var Komentari = [String]()
+    var statusi = [String]()
+    
+    @IBAction func GoBack(_ sender: Any) {
+        performSegue(withIdentifier: "nazSeg", sender: nil)
+    }
+    @IBAction func AddComment(_ sender: Any) {
+        performSegue(withIdentifier: "addComSeg", sender: nil)
+    }
+    
+    var refresher: UIRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updateTable()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(CommentsTableViewController.updateTable), for: UIControl.Event.valueChanged)
+        self.view.addSubview(refresher)
     }
 
-    // MARK: - Table view data source
+    @objc func updateTable(){
+        datumi.removeAll()
+        HostessIds.removeAll()
+        statusi.removeAll()
+        Iminja.removeAll()
+        Preziminja.removeAll()
+        Komentari.removeAll()
+        
+        let query = PFQuery(className: "Comment")
+        query.whereKey("from", equalTo: PFUser.current()?.objectId)
+        query.addDescendingOrder("date")
+        query.findObjectsInBackground { (objects, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+            } else if let object = objects {
+                for obj in object {
+                    if let datumKom = obj["date"]{
+                        if let status = obj["status"]{
+                            if let hostessId = obj["to"]{
+                                if let kom = obj["komentar"]{
+                                    self.datumi.append(datumKom as! NSDate)
+                                    self.HostessIds.append(hostessId as! String)
+                                    self.statusi.append(status as! String)
+                                    self.Komentari.append(kom as! String)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        self.refresher.endRefreshing()
+        self.tableView.reloadData()
+        
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return datumi.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath)
 
-        // Configure the cell...
-
+        let HostessId = HostessIds[indexPath.row]
+        let query = PFUser.query()
+        query?.whereKey("objectId", equalTo: HostessId)
+        query?.findObjectsInBackground(block: { (objects, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else if let obj = objects{
+                for o in obj{
+                    if let Hostess = o as? PFUser{
+                        if let firstName = Hostess["firstName"]{
+                            if let lastName = Hostess["lastName"]{
+                                cell.textLabel?.text = (firstName as! String + " " + (lastName as! String))
+                            }
+                        }
+                    }
+                }
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let StringDate = dateFormatter.string(from: self.datumi[indexPath.row] as! Date)
+                cell.detailTextLabel?.text = StringDate
+                let status = self.statusi[indexPath.row]
+                if status == "pozitivno" {
+                    cell.backgroundColor = UIColor.green
+                }
+                else if status == "negativno"{
+                    cell.backgroundColor = UIColor.red
+                }
+            }
+        })
         return cell
     }
-    */
+ 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = (tableView.indexPathForSelectedRow?.row)!
+        performSegue(withIdentifier: "comDetailSeg", sender: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "comDetailSeg"{
+            let destinationVC = segue.destination as! CommentDetailsViewController
+            destinationVC.HostessId = HostessIds[index]
+            destinationVC.status = statusi[index]
+            destinationVC.komentar = Komentari[index]
+            destinationVC.date = datumi[index]
+        }
+        else if segue.identifier == "addComSeg" {
+            let destinationVC = segue.destination as! AddCommentViewController
+            destinationVC.Ime = Iminja[index]
+            destinationVC.Prezime = Preziminja[index]
+        }
     }
-    */
-
 }
