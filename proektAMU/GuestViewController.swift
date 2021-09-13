@@ -67,7 +67,7 @@ class GuestViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         else{
             firstnames.removeAll()
             lastnames.removeAll()
-            
+            seats.removeAll()
             
             opis = ReserveText.text!
             if self.ChoiceLabel.text == "Bar"{
@@ -90,7 +90,7 @@ class GuestViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
                                     
                                         self.firstnames.append(firstname as! String)
                                         self.lastnames.append(lastname as! String)
-                                    
+                                    self.seats.append(self.Tip as! String)
                                     
                                 }
                             }

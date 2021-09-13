@@ -21,6 +21,9 @@ class RequestReservationTableViewController: UITableViewController {
     var typeSeat = [String]()
     var finishdate = [NSDate?]()
     
+    @IBAction func Back(_ sender: Any) {
+        performSegue(withIdentifier: "vrakajsenazad", sender: nil)
+    }
     var refresher: UIRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {

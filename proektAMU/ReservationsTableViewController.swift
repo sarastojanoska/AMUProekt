@@ -26,6 +26,9 @@ class ReservationsTableViewController: UITableViewController {
     
     var refresher: UIRefreshControl = UIRefreshControl()
     
+    @IBAction func Back(_ sender: Any) {
+        performSegue(withIdentifier: "caoNazad", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         updateTable()

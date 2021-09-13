@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class ReviewTableViewController: UITableViewController {
     
     var index = Int()
     var datumi = [NSDate]()
-    var HostessIds = [String]()
+    var GuestIds = [String]()
     var Iminja = [String]()
     var Preziminja = [String]()
-    var Komentari = [String]()
-    var statusi = [String]()
+    var ocenki = [String]()
+    var zetoni = [String]()
 
     @IBAction func Back(_ sender: Any) {
         performSegue(withIdentifier: "naZSeg", sender: nil)
@@ -36,13 +37,13 @@ class ReviewTableViewController: UITableViewController {
 
     @objc func updateTable(){
         datumi.removeAll()
-        HostessIds.removeAll()
-        statusi.removeAll()
+        GuestIds.removeAll()
+        zetoni.removeAll()
         Iminja.removeAll()
         Preziminja.removeAll()
-        Komentari.removeAll()
+        ocenki.removeAll()
         
-        let query = PFQuery(className: "Comment")
+        let query = PFQuery(className: "Review")
         query.whereKey("from", equalTo: PFUser.current()?.objectId)
         query.addDescendingOrder("date")
         query.findObjectsInBackground { (objects, error) in
@@ -50,14 +51,14 @@ class ReviewTableViewController: UITableViewController {
                 print(error?.localizedDescription)
             } else if let object = objects {
                 for obj in object {
-                    if let datumKom = obj["date"]{
-                        if let status = obj["status"]{
-                            if let hostessId = obj["to"]{
-                                if let kom = obj["komentar"]{
-                                    self.datumi.append(datumKom as! NSDate)
-                                    self.HostessIds.append(hostessId as! String)
-                                    self.statusi.append(status as! String)
-                                    self.Komentari.append(kom as! String)
+                    if let datumrev = obj["date"]{
+                        if let zeton = obj["zeton"]{
+                            if let guestId = obj["to"]{
+                                if let ocenka = obj["ocenka"]{
+                                    self.datumi.append(datumrev as! NSDate)
+                                    self.GuestIds.append(guestId as! String)
+                                    self.zetoni.append(zeton as! String)
+                                    self.ocenki.append(ocenka as! String)
                                 }
                             }
                         }
@@ -72,67 +73,70 @@ class ReviewTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return datumi.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "keLija", for: indexPath)
 
-        // Configure the cell...
+        let GuestId = GuestIds[indexPath.row]
+        let query = PFUser.query()
+        query?.whereKey("objectId", equalTo: GuestId)
+        query?.findObjectsInBackground(block: { (objects, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            }else if let obj = objects{
+                for o in obj{
+                    if let Guest = o as? PFUser{
+                        if let firstName = Guest["firstName"]{
+                            if let lastName = Guest["lastName"]{
+                                cell.textLabel?.text = (firstName as! String + " " + (lastName as! String))
+                            }
+                        }
+                    }
+                }
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let StringDate = dateFormatter.string(from: self.datumi[indexPath.row] as! Date)
+                cell.detailTextLabel?.text = StringDate
+                let zeton = self.zetoni[indexPath.row]
+                if zeton == "zelen" {
+                    cell.backgroundColor = UIColor.green
+                }
+                else if zeton == "crven"{
+                    cell.backgroundColor = UIColor.red
+                }
+            }
+        })
 
         return cell
     }
-    */
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = (tableView.indexPathForSelectedRow?.row)!
+        performSegue(withIdentifier: "konReviewSeg", sender: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "konReviewSeg"{
+            let destinationVC = segue.destination as! ReviewDetailsViewController
+            destinationVC.GuestId = GuestIds[index]
+            destinationVC.zeton = zetoni[index]
+            destinationVC.ocenka = ocenki[index]
+            destinationVC.date = datumi[index]
+        }
+        else if segue.identifier == "addReviewSeg"{
+            let destinationVC = segue.destination as! AddReviewViewController
+            destinationVC.Ime = Iminja[index]
+            destinationVC.Prezime = Preziminja[index]
+        }
     }
-    */
 
 }

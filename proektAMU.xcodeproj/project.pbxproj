@@ -26,6 +26,10 @@
 		AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09A79326E59D7100BD5C68 /* MapViewController.swift */; };
 		AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */; };
 		AA0BFAE226E03D0500BD80E1 /* HostessDetailRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */; };
+		AA26AB9F26EBEB0F0064F236 /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26AB9E26EBEB0F0064F236 /* ReviewDetailsViewController.swift */; };
+		AA26ABA126EBEB370064F236 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26ABA026EBEB370064F236 /* AddReviewViewController.swift */; };
+		AA26ABA326EBFE8B0064F236 /* HostessReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26ABA226EBFE8B0064F236 /* HostessReviewTableViewController.swift */; };
+		AA26ABA526EBFED30064F236 /* HostessReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26ABA426EBFED30064F236 /* HostessReviewDetailsViewController.swift */; };
 		AA42DB0D26EAACA5002F2983 /* GuestCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB0C26EAACA5002F2983 /* GuestCommentsTableViewController.swift */; };
 		AA42DB0F26EAACE9002F2983 /* GuestCommentsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */; };
 		AA42DB1126EACB80002F2983 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */; };
@@ -59,6 +63,10 @@
 		AA09A79326E59D7100BD5C68 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HostessRequestsTableViewController.swift; path = /Users/sarastojanoska/Desktop/proektAMU/proektAMU/HostessRequestsTableViewController.swift; sourceTree = "<absolute>"; };
 		AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostessDetailRequestViewController.swift; sourceTree = "<group>"; };
+		AA26AB9E26EBEB0F0064F236 /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
+		AA26ABA026EBEB370064F236 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		AA26ABA226EBFE8B0064F236 /* HostessReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostessReviewTableViewController.swift; sourceTree = "<group>"; };
+		AA26ABA426EBFED30064F236 /* HostessReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostessReviewDetailsViewController.swift; sourceTree = "<group>"; };
 		AA42DB0C26EAACA5002F2983 /* GuestCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCommentsTableViewController.swift; sourceTree = "<group>"; };
 		AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCommentsDetailViewController.swift; sourceTree = "<group>"; };
 		AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,8 @@
 				AA081DEE26E965BE00A9F199 /* CommentsTableViewController.swift */,
 				AA081DF026E976E300A9F199 /* CommentDetailsViewController.swift */,
 				AA081DF426E981D400A9F199 /* AddCommentViewController.swift */,
+				AA26ABA226EBFE8B0064F236 /* HostessReviewTableViewController.swift */,
+				AA26ABA426EBFED30064F236 /* HostessReviewDetailsViewController.swift */,
 				AA0BFADF26E02A4E00BD80E1 /* HostessRequestsTableViewController.swift */,
 				AA0BFAE126E03D0500BD80E1 /* HostessDetailRequestViewController.swift */,
 				AA09A78F26E5805B00BD5C68 /* ReservationsTableViewController.swift */,
@@ -140,6 +150,8 @@
 				AA42DB0E26EAACE9002F2983 /* GuestCommentsDetailViewController.swift */,
 				AA09A79326E59D7100BD5C68 /* MapViewController.swift */,
 				AA42DB1026EACB80002F2983 /* ReviewTableViewController.swift */,
+				AA26AB9E26EBEB0F0064F236 /* ReviewDetailsViewController.swift */,
+				AA26ABA026EBEB370064F236 /* AddReviewViewController.swift */,
 				AA026B0126CFD1D4005526C0 /* Main.storyboard */,
 				AA026B0726CFD1F8005526C0 /* Assets.xcassets */,
 				AA026B0926CFD1F8005526C0 /* LaunchScreen.storyboard */,
@@ -275,20 +287,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA01599D26DB05630045EAFB /* AvailableSeatRequestViewController.swift in Sources */,
+				AA26AB9F26EBEB0F0064F236 /* ReviewDetailsViewController.swift in Sources */,
 				AA01599926DAD9A60045EAFB /* AvailableSeatsTableViewController.swift in Sources */,
 				AA026B0626CFD1D4005526C0 /* proektAMU.xcdatamodeld in Sources */,
 				AA081DF126E976E300A9F199 /* CommentDetailsViewController.swift in Sources */,
 				AA081DF526E981D400A9F199 /* AddCommentViewController.swift in Sources */,
+				AA26ABA126EBEB370064F236 /* AddReviewViewController.swift in Sources */,
 				AA026B0026CFD1D4005526C0 /* ViewController.swift in Sources */,
 				AA42DB1126EACB80002F2983 /* ReviewTableViewController.swift in Sources */,
 				AA42DB0D26EAACA5002F2983 /* GuestCommentsTableViewController.swift in Sources */,
 				AA09A79226E58F1200BD5C68 /* ReservationDetailViewController.swift in Sources */,
 				AA42DB0F26EAACE9002F2983 /* GuestCommentsDetailViewController.swift in Sources */,
 				AA026AFE26CFD1D4005526C0 /* AppDelegate.swift in Sources */,
+				AA26ABA326EBFE8B0064F236 /* HostessReviewTableViewController.swift in Sources */,
 				AA09A79426E59D7100BD5C68 /* MapViewController.swift in Sources */,
 				AA081DEF26E965BE00A9F199 /* CommentsTableViewController.swift in Sources */,
 				AA0BFAE026E02A4E00BD80E1 /* HostessRequestsTableViewController.swift in Sources */,
 				AA01599B26DAE0B10045EAFB /* RequestReservationTableViewController.swift in Sources */,
+				AA26ABA526EBFED30064F236 /* HostessReviewDetailsViewController.swift in Sources */,
 				AAFE4A0226D85E9D006ED9E3 /* GuestViewController.swift in Sources */,
 				AAFB954226DD8B650028948C /* RequestDetailsViewController.swift in Sources */,
 				AA09A79026E5805B00BD5C68 /* ReservationsTableViewController.swift in Sources */,

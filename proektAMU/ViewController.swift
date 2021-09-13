@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     var signUpMode = false
+    
+    var activityIndicator = UIActivityIndicatorView()
+    
     @IBAction func GuestOrHostess(_ sender: Any) {
         if signUpMode {
             signUpMode = false
@@ -53,7 +56,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if signUpMode == false{
             NameTextField.isHidden = true
             SurnameTextField.isHidden = true
@@ -85,7 +90,7 @@ class ViewController: UIViewController {
             displayAlert(title: "Error in form", message: "You must provide all information")
         }
         else{
-            let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             activityIndicator.center = view.center
             activityIndicator.hidesWhenStopped = true
             activityIndicator.style = UIActivityIndicatorView.Style.gray
@@ -112,8 +117,9 @@ class ViewController: UIViewController {
                 }
                 
                 user.signUpInBackground{(success,error ) in
-                    activityIndicator.stopAnimating()
+                    self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
+                    
                     if let error = error{
                         let errorString = error.localizedDescription
                         self.displayAlert(title: "Error signing up", message: errorString)
@@ -122,7 +128,7 @@ class ViewController: UIViewController {
                         //print("Sign up success")
                         if PFUser.current()!["userType"] as! String == "Hostess" {
                             self.performSegue(withIdentifier: "toReviewSeg", sender: self)
-                            print("Signed-up - Hostess")
+                            //print("Signed-up - Hostess")
                         }else {
                             self.performSegue(withIdentifier: "UserSeg", sender: self)
                         }
@@ -133,7 +139,7 @@ class ViewController: UIViewController {
                 if emailTextField.text == "" || passTextField.text == ""{
                     displayAlert(title: "Error in form", message: "You must provide both email and password")
                 }else{
-                    let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                    activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
                     activityIndicator.center = view.center
                     activityIndicator.hidesWhenStopped = true
                     activityIndicator.style = UIActivityIndicatorView.Style.gray
@@ -142,7 +148,7 @@ class ViewController: UIViewController {
 
                     PFUser.logInWithUsername(inBackground: emailTextField.text!, password: passTextField.text!) { (user, error) in
                         
-                        activityIndicator.stopAnimating()
+                        self.activityIndicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
                         
                         if let error = error{
@@ -170,11 +176,23 @@ class ViewController: UIViewController {
             signUpMode = false
             signInButton.setTitle("Sign In", for: .normal)
             registerButton.setTitle("Switch to Register", for: .normal)
+            NameTextField.isHidden = true
+            SurnameTextField.isHidden = true
+            PhoneTextField.isHidden = true
+            Guest.isHidden = true
+            Hostess.isHidden = true
+            GuestOrHostess.isHidden = true
         }
         else{
             signUpMode = true
             signInButton.setTitle("Register", for: .normal)
             registerButton.setTitle("Switch to Sign In", for: .normal)
+            NameTextField.isHidden = false
+            SurnameTextField.isHidden = false
+            PhoneTextField.isHidden = false
+            Guest.isHidden = false
+            Hostess.isHidden = false
+            GuestOrHostess.isHidden = false
         }
     }
 }

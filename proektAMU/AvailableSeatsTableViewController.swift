@@ -22,7 +22,11 @@ class AvailableSeatsTableViewController: UITableViewController {
     var date = NSDate()
     var HostessId = [String]()
     var index = Int()
-
+    
+    @IBAction func Back(_ sender: Any) {
+        performSegue(withIdentifier: "ciaoAmore", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,19 +47,19 @@ class AvailableSeatsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         HostessId.removeAll()
         let cell = tableView.dequeueReusableCell(withIdentifier: "Kelija", for: indexPath)
-        cell.textLabel?.text = "Request from:"
-        cell.detailTextLabel?.text = Iminja[indexPath.row] + " " + Preziminja[indexPath.row]
+        cell.textLabel?.text = Iminja[indexPath.row] + " " + Preziminja[indexPath.row]
+        
         let MyLoc = CLLocation(latitude: lat, longitude: lon)
         let firstname = Iminja[indexPath.row]
         let lastname = Preziminja[indexPath.row]
-   
+        let type = seats[indexPath.row]
         // Configure the cell...
         
-        let HostessQuery = PFObject.query()
+        let HostessQuery = PFUser.query()
         HostessQuery?.whereKey("userType", equalTo: "Hostess")
         HostessQuery?.whereKey("firstName", equalTo: firstname)
         HostessQuery?.whereKey("lastName", equalTo: lastname)
-        HostessQuery?.whereKey("reqSeat", equalTo: tip)
+        HostessQuery?.whereKey("reqSeat", equalTo: type)
         
         HostessQuery?.findObjectsInBackground(block: { (objects, error) in
             if error != nil {
@@ -70,7 +74,7 @@ class AvailableSeatsTableViewController: UITableViewController {
                                     let HostessLocation = CLLocation(latitude: currentLat as! Double, longitude: currentLong as! Double)
                                     let distance = HostessLocation.distance(from: MyLoc) / 1000
                                     let roundedDistance = round(distance * 100) / 100
-                                    
+                                    cell.detailTextLabel?.text = "\(roundedDistance) km away"
                                     let query = PFQuery(className: "Reservation")
                                     query.whereKey("from", equalTo: PFUser.current()?.objectId)
                                     query.whereKey("to", equalTo: objectId)
@@ -110,7 +114,7 @@ class AvailableSeatsTableViewController: UITableViewController {
             destinationVC.lon = lon
             destinationVC.ime = Iminja[index]
             destinationVC.prezime = Preziminja[index]
-            destinationVC.Tip = tip
+            destinationVC.Tip = seats[index]
             destinationVC.date = date
         }
     }

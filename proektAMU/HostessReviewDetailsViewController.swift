@@ -9,22 +9,36 @@
 import UIKit
 
 class HostessReviewDetailsViewController: UIViewController {
+    
+    var datum = NSDate()
+    var zeton = String()
+    var Ime = String()
+    var Prezime = String()
+    var ocenka = String()
+    var revId = String()
+    
+    @IBOutlet weak var Ocenka: UILabel!
+    @IBOutlet weak var Zeton: UILabel!
+    @IBOutlet weak var Datum: UILabel!
+    @IBOutlet weak var Korisnik: UILabel!
+    @IBAction func Back(_ sender: Any) {
+        performSegue(withIdentifier: "caoSeg", sender: nil)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        Korisnik.text = Ime + " " + Prezime
+        Zeton.text = zeton
+        Ocenka.text = ocenka
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let StringDate = formatter.string(from: datum as Date)
+        Datum.text = StringDate
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
