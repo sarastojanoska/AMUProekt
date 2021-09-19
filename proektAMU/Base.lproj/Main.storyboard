@@ -65,7 +65,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aem-qc-VD2"/>
-                                    <segue destination="5VQ-bg-wcd" kind="show" identifier="UserSeg" id="iJU-jL-Fnc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdg-bO-dDi">
@@ -182,6 +181,7 @@
                         <outlet property="registerButton" destination="0cl-Fy-Qo2" id="GLe-lr-Lgd"/>
                         <outlet property="signInButton" destination="QQN-8v-17N" id="GzY-Hn-CYq"/>
                         <segue destination="hCv-k1-vJT" kind="show" identifier="toReviewSeg" id="SDj-Tm-jGY"/>
+                        <segue destination="5VQ-bg-wcd" kind="show" identifier="UserSeg" id="T9n-CR-ctk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -317,17 +317,13 @@
                     </view>
                     <connections>
                         <outlet property="BarSeat" destination="T4q-dz-Bcc" id="rEf-2U-U9n"/>
-                        <outlet property="Barseat" destination="T4q-dz-Bcc" id="OgQ-RH-oma"/>
                         <outlet property="ChoiceLabel" destination="3Ry-oO-UcQ" id="Uzw-S4-bOe"/>
                         <outlet property="ChooseLocLabel" destination="02z-sU-UDd" id="0Kx-j1-nKm"/>
-                        <outlet property="Map" destination="79h-SZ-NI4" id="T86-gd-mw9"/>
                         <outlet property="Mapa" destination="79h-SZ-NI4" id="m1K-wg-Lis"/>
-                        <outlet property="ResLabel" destination="4ob-9l-lLX" id="sGt-qj-RvE"/>
                         <outlet property="ReservationLabel" destination="4ob-9l-lLX" id="Wdu-4b-Bpj"/>
                         <outlet property="ReserveText" destination="vKl-fk-JfL" id="M1s-gq-LcT"/>
                         <outlet property="Review" destination="DxK-jt-kIX" id="rAH-YR-M9Y"/>
                         <outlet property="TableSeat" destination="zuY-RE-RVL" id="PWx-Fr-TF7"/>
-                        <outlet property="TypeReservation" destination="vKl-fk-JfL" id="d07-fU-d5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYC-fQ-waM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1444,7 +1440,6 @@
                         <outlet property="Phone" destination="56i-kB-vS8" id="HFX-r5-zur"/>
                         <outlet property="chooseDate" destination="Q1W-Su-Gm1" id="wIE-We-8Vv"/>
                         <outlet property="kopceReview" destination="t0n-qO-pNc" id="tSH-jq-Kyc"/>
-                        <outlet property="status" destination="nUv-rX-qIs" id="TvG-fD-rEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27S-jg-UC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1581,7 +1576,6 @@
                         <outlet property="Datum" destination="s2p-xq-Cgp" id="a5l-vm-p17"/>
                         <outlet property="Korisnik" destination="z3Q-4H-yDI" id="Pij-U3-qcG"/>
                         <outlet property="Status" destination="nso-Bg-hyd" id="YEf-Kk-gxC"/>
-                        <outlet property="datum" destination="s2p-xq-Cgp" id="lFO-iF-EII"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCC-hD-qUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1998,7 +1992,6 @@
                         <outlet property="Reservation" destination="fBw-BZ-bsr" id="bQf-Th-hSN"/>
                         <outlet property="TypeSeat" destination="sN5-Ie-eAN" id="rcL-dW-oae"/>
                         <outlet property="UserLabel" destination="2OG-cX-PGo" id="FmZ-jD-nHg"/>
-                        <outlet property="datum" destination="LxQ-CQ-PYg" id="GqR-Oz-uRf"/>
                         <outlet property="phoneLabel" destination="SO6-wk-5kR" id="fKy-ix-h5S"/>
                         <outlet property="requestDate" destination="LxQ-CQ-PYg" id="nVH-Kr-Kut"/>
                         <outlet property="userInfo" destination="Vgm-dP-aS9" id="Oez-nZ-iGW"/>
@@ -2017,15 +2010,15 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x5o-vX-mlS"/>
-        <segue reference="Tgb-6A-h0H"/>
-        <segue reference="P5m-jc-mWs"/>
+        <segue reference="U4L-Nh-CcD"/>
+        <segue reference="cXF-gI-LwU"/>
         <segue reference="r5U-xp-qDA"/>
-        <segue reference="1yg-He-Esf"/>
+        <segue reference="SDj-Tm-jGY"/>
         <segue reference="O5J-by-Cyy"/>
-        <segue reference="pFX-6c-JWk"/>
+        <segue reference="MCM-Wo-dJx"/>
         <segue reference="VJY-mH-MYm"/>
         <segue reference="myt-om-EOv"/>
         <segue reference="naP-Bx-Ws9"/>
-        <segue reference="fl6-DZ-4Ca"/>
+        <segue reference="T9n-CR-ctk"/>
     </inferredMetricsTieBreakers>
 </document>
